@@ -1,0 +1,35 @@
+#board .col {
+  text-align: center;
+  height: 100px;
+  line-height: 100px;
+  font-size: 30px;
+  padding: 0;
+}
+
+#board .col:nth-child(2) {
+  border-right: 1px solid;
+  border-left: 1px solid;
+}
+
+#board .row:nth-child(2) .col {
+  border-top: 1px solid;
+  border-bottom: 1px solid;
+}
+
+.player {
+  font-weight: bold;
+  text-align: center;
+}
+
+.player-name {
+  font-size: 18px;
+}
+
+.player-score {
+  margin-top: 15px;
+  font-size: 30px;
+}
+
+#scores {
+  margin-top: 30px;
+}

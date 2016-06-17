@@ -1,0 +1,54 @@
+<ion-view title="Home" ng-controller="HomeController as home_ctrl" ng-init="connect()">
+  <header class="bar bar-header bar-stable">
+    <h1 class="title">Ionic Horizon Tic Tac Toe</h1>
+  </header>
+
+  <ion-content class="has-header" ng-show="ready">
+    <div id="join" class="padding" ng-hide="has_joined">
+      <div class="list">
+        <label class="item item-input">
+          <input type="text" ng-model="home_ctrl.room_name" placeholder="Room Name">
+        </label>
+        <label class="item item-input">
+          <input type="text" ng-model="home_ctrl.username" placeholder="User Name">
+        </label>
+      </div>
+
+      <button class="button button-positive button-block" ng-click="join(home_ctrl.username, home_ctrl.room_name)">
+        join
+      </button>
+    </div>
+
+    <div id="game" ng-show="has_joined">
+      <div id="board">
+        <div class="row">
+          <div class="col" ng-click="placePiece(1)" id="1"></div>
+          <div class="col" ng-click="placePiece(2)" id="2"></div>
+          <div class="col" ng-click="placePiece(3)" id="3"></div>
+        </div>
+        <div class="row">
+          <div class="col" ng-click="placePiece(4)" id="4"></div>
+          <div class="col" ng-click="placePiece(5)" id="5"></div>
+          <div class="col" ng-click="placePiece(6)" id="6"></div>
+        </div>
+        <div class="row">
+          <div class="col" ng-click="placePiece(7)" id="7"></div>
+          <div class="col" ng-click="placePiece(8)" id="8"></div>
+          <div class="col" ng-click="placePiece(9)" id="9"></div>
+        </div>
+      </div>
+      <div id="scores">
+        <div class="row">
+          <div class="col col-50 player">
+            <div class="player-name" ng-bind="player"></div>
+            <div class="player-score" ng-bind="player_score"></div>
+          </div>
+          <div class="col col-50 player">
+            <div class="player-name" ng-bind="opponent"></div>
+            <div class="player-score" ng-bind="opponent_score"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>
